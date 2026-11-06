@@ -1,6 +1,0 @@
-schema_version: "1.1"
-name: tighten-my-prompt-only
-expected_outcome: |
-  A tightened prompt in change/keep form grounded in the image (which palms, where the reflections fall, what stays), shown with a short plain-English reason, then run and checked like any edit.
-context:
-  scaffold_script: place-files.sh

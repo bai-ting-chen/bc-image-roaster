@@ -6,5 +6,3 @@ __pycache__/
 *.jpeg
 *.webp
 image-roaster/
-evals/*/files/
-evals/results/
