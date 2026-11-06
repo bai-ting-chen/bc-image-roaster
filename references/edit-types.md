@@ -19,6 +19,8 @@ strip of sky above the crown, crown no wider than the palm's.
 Change: remove [the exact object and what sits on it, location]. The space stays empty.
 Keep: [what stands behind and beside it]. Keep the rest unchanged.
 ```
+Remove whole groups: when the target stands among look-alikes, remove the group or ask
+([prompting.md](prompting.md) rule 16).
 Example: "remove the dark carved stone reception desk in the centre, with its wooden top and the
 brass table lamp on it. The space stays empty."
 
@@ -35,11 +37,14 @@ top of a door. Several people: give each a location, or they cluster.
 
 ## Change a material or colour
 ```text
-Change: change [surface, location] from [current material] to [new material + finish + colour].
-Keep: the shape, joints and edges of [the surface]; [nearby surfaces of the same material that stay]. Keep the rest unchanged.
+Change: change [every part of the surface or object, location] from [current material] to [new material + finish + colour]. Only the material changes: [each part] keeps its shape, profile, size and joints.
+Keep: [the other parts of the same object]; [nearby things of the old or the new material, with their current material]. Keep the rest unchanged.
 ```
-Example: "change the floor tiles in the front from cream stone to polished dark grey terrazzo with
-white chips; keep the tile joints."
+Read the object's parts first (a handrail = a metal support and a timber top cap; a floor = field
+tiles, stone bands, inlay). Name every part that changes and every part that stays.
+Example: "change all the floor paving in view — the cream field tiles, the stone bands between
+them and the patterned inlay in the front — to polished dark grey terrazzo with white chips; keep
+the joint pattern."
 
 ## Planting
 Use Replace or Add. Name the plant type, height against an anchor, crown shape and density
@@ -50,6 +55,16 @@ Use Replace or Add. Name the plant type, height against an anchor, crown shape a
 Change: make it [late afternoon / dusk / overcast / winter], with [sun direction or light quality, sky colour].
 Keep: [all objects and materials], the camera and framing. Change only light, shadows, sky [and season cues].
 ```
-This edit changes every region on purpose: the drift flag will light up everywhere, so check the
-objects, not the numbers. Season cues to name: bare branches, snow on flat surfaces only, autumn
-leaf colour.
+Describe what the sky and the lights look like, not just the word:
+
+| User's word | Write in the prompt |
+|---|---|
+| sunset, golden hour | low warm sun from [side], long shadows, sky warm near the horizon |
+| dusk, blue hour | sun gone, sky deep blue with a faint warm band at the horizon, existing lights on |
+| evening, night | dark navy night sky, no sunlight, no shadows from the sun, existing lights on |
+| overcast | even grey sky, soft light, no hard shadows |
+
+"Evening" has two readings, dusk or night (RULES EDT_02). Name the existing light
+fixtures that should glow and add "Add no other lights." This edit changes every region on
+purpose: the drift flag will light up everywhere, so check the objects, not the numbers. Season
+cues to name: bare branches, snow on flat surfaces only, autumn leaf colour.

@@ -25,7 +25,7 @@ Rule: Read the input at full size into a scene inventory; name every target, loo
 Read: [image-reading.md](references/image-reading.md)
 
 **EDT_02 — The Request Is Unclear**  
-Rule: Ask back only when the request and the image disagree or the target, count or place is ambiguous; otherwise decide and say what was decided.  
+Rule: Take the user's words at their full scope. Ask back only when the request and the image disagree (count, which object) or a word has two readings (evening: dusk or night); otherwise decide and say what was decided.  
 Read: [prompting.md](references/prompting.md)
 
 **EDT_03 — Running A Prompt**  

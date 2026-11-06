@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: column-and-handrail-materials
+expected_outcome: |
+  The white twin-blade columns along the walkway canopy become timber veneer and the timber top rails of the handrails become champagne metal, while look-alikes stay: the slatted timber ceiling, the timber cabinet, the timber furniture frames, the white planter posts and the brass rail posts. The user gets the prompt, the final image, a compare sheet and one line per failed try.
+context:
+  scaffold_script: place-files.sh

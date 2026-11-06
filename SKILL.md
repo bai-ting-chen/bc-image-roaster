@@ -35,7 +35,8 @@ exact photoreal renders use bc-archviz.
    → [check.md](references/check.md).
 6. **Deliver.** Intent: final image, compare sheet, one line per failed try (CHK_03).
 
-A prompt handed in only to be tightened: steps 1–3. A follow-up edit: EDT_04.
+A prompt the user hands in: tighten it in steps 1–3, show it, then run it (steps 4–6) unless the
+user said not to. A follow-up edit: EDT_04.
 
 ## Parameters
 | Parameter | Default | Where |

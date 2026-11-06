@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: remove-plants-and-terrazzo-floor
+expected_outcome: |
+  The potted plants beside the colourful painting are removed with nothing put in their place, and the paved floor becomes dark terrazzo, while the desk, bonsai, screens, signs and camera stay. Ambiguity about which plants is resolved by asking or by a stated assumption. The user gets the prompt, the final image, a compare sheet and one line per failed try.
+context:
+  scaffold_script: place-files.sh

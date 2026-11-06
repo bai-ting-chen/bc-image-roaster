@@ -25,6 +25,7 @@ Check Rook first (`rhino_ping`). Call `rhino_render_view` (if hidden, find it wi
 | `resolution` | `2K` (default); `1K` for a quick look; `4K` only if the user asks |
 | `aspect_ratio` | the input's ratio, e.g. `16:9`, or `auto`; never `match_input_image` |
 | `reference_image_paths` | prepared reference images, at most 8 |
+| `port` | the Rhino instance from `rhino_ping`; needed when several Rhino windows are open (the call is refused without it) |
 
 Copy the result into the work folder as `try-NN.png`. Rook also keeps every result and its prompt
 in `%APPDATA%\Rook\artifacts\`.

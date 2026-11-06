@@ -12,7 +12,8 @@ changed is not a pass just because it drifted little.
    that the edit spec does not touch → inspect that region in a crop. The number only says where
    to look; it cannot judge success, and a light or sky edit flags every region on purpose.
 4. **Verdict** against the inventory, one line each:
-   - every Change done, with the right count, kind, place and size;
+   - every Change done, with the right count, kind, place and size, on every part named;
+   - a material change kept the shape and profile of what it changed (compare crops);
    - every Keep item and look-alike still there and unchanged;
    - nothing added, nothing moved, framing the same;
    - text: readable and spelled as before, or flagged to the user.

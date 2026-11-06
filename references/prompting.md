@@ -46,7 +46,21 @@ Leave out lines that have nothing to say. One simple change may fit in one Chang
 12. **Plain sentences in short blocks.** No keyword lists, no weight syntax like `(tree:1.5)`, no
     JSON.
 13. **On a retry, restate the important keeps.** Each call is fresh; it does not remember the
-    last prompt.
+    last prompt. A fix for one failure can cause another (a retry that saved the planters changed
+    the rail profile), so the check of every retry covers all Change and Keep lines again.
+14. **Take the user's words at their full scope.** "The floor" is every floor surface in view:
+    field tiles, stone bands, inlays, borders. List each part in the Change line. Do not leave a
+    part out because it looks like a design feature; if a part may be meant to stay, ask (RULES
+    EDT_02).
+15. **A material change keeps the shape.** Describe the object's parts from the inventory and say
+    which part changes: "only the timber top cap of each handrail becomes brushed champagne metal;
+    the cap keeps its rounded profile and size; the slim metal support below stays as it is".
+16. **Remove whole groups, not part of a group of look-alikes.** Removing two pots out of six
+    standing together failed three times (left, swapped or turned into trees); removing both whole
+    groups worked at once. If the user's count and the image disagree, ask which they mean.
+17. **Light and time of day: describe the sky and the lights you can see,** not just a word.
+    "Evening" was read as dusk every time while the user meant night. Use the table in
+    [edit-types.md](edit-types.md) › Sky, time of day.
 
 ## Failure → prompt fix
 
@@ -61,7 +75,13 @@ Leave out lines that have nothing to say. One simple change may fit in one Chang
 | Unrequested object added (waterfall, extra lounger, extra palm) | name the area in Keep ("the pool edge and the deck stay as they are"); try "Add nothing else." |
 | Framing or camera moved | add "Keep the camera, framing and crop exactly as they are." to Keep |
 | People clustered in one posed group | give each person a location ("one near the left steps, one in the middle …") |
-| Small text garbled | no prompt fix works reliably; tell the user (see check.md) |
+| Door opened, or a closed object changed state | name it in Keep with its state ("both bronze doors stay closed") |
+| Light fixtures changed form or new lamps added | describe the existing fixtures exactly; add "Add no other lights." |
+| Material spread to look-alikes (stone planters turned timber) | name them in Keep with their current material ("stay pale cream stone, not wood") |
+| Object's profile or shape changed in a material swap | name the parts and say the shape and size stay (rule 15) |
+| Part of a look-alike group left, swapped or transformed instead of removed | remove the whole group, or ask the user (rule 16) |
+| Part of a named surface left unchanged (stone bands, inlay) | list every part of the surface in the Change line (rule 14) |
+| Larger sign text garbled | quote the sign text exactly in Keep; this saved a name sign once. Tiny text still breaks: tell the user (see check.md) |
 
 When a new failure and a fix that worked turn up, add a row here.
 
