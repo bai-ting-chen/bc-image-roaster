@@ -46,13 +46,6 @@ A prompt handed in only to be tightened: steps 1–3. A follow-up edit: EDT_04.
 | retry cap | 3 tries | RULES CHK_02 |
 | drift review threshold | 3 % per region | check.md |
 
-## Gotchas
-- The model redraws the whole image: small text garbles, fine detail softens, outputs come back
-  smaller (5000 px in, 2752 px out at 2K).
-- Two changes in one prompt can merge (a new object placed where a removed one stood).
-- "Keep the rest unchanged" does not stop extra objects; name the area in Keep.
-- `aspect_ratio` takes `auto` or a ratio, never `match_input_image`.
-
 ## Task router
 - [Image reading](references/image-reading.md): the scene inventory
 - [Prompting](references/prompting.md): template, rules, failure → prompt fix
