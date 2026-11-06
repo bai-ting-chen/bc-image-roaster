@@ -37,14 +37,31 @@ top of a door. Several people: give each a location, or they cluster.
 
 ## Change a material or colour
 ```text
-Change: change [every part of the surface or object, location] from [current material] to [new material + finish + colour]. Only the material changes: [each part] keeps its shape, profile, size and joints.
+Change: change [every part of the surface or object, location] from [current material] to [new material + finish + colour, in the new material's real format]. Only the material changes: [each part] keeps its shape, profile and size.
 Keep: [the other parts of the same object]; [nearby things of the old or the new material, with their current material]. Keep the rest unchanged.
 ```
 Read the object's parts first (a handrail = a metal support and a timber top cap; a floor = field
 tiles, stone bands, inlay). Name every part that changes and every part that stays.
-Example: "change all the floor paving in view — the cream field tiles, the stone bands between
-them and the patterned inlay in the front — to polished dark grey terrazzo with white chips; keep
-the joint pattern."
+
+**A surface with a pattern of parts gets a material map,** one new finish per part, so the pattern
+still has something to show. Never write "everything becomes X, keep the pattern": in testing that
+contradiction made the model keep old bands or redraw the pattern. If the user names one material
+for a patterned surface, ask whether the pattern parts take a lighter or darker tone (RULES EDT_02).
+
+**Use the new material's real format,** not the old one's joints:
+
+| Material | Format to write |
+|---|---|
+| terrazzo, poured resin, microcement | one seamless poured surface, no tile or panel joints; the pattern shows only where the colour changes |
+| stone, porcelain tiles | slabs of [size], [laying pattern], fine joints |
+| timber flooring, decking | boards of [width] running [direction] |
+| timber veneer on a column or wall | vertical grain, no visible joints unless the user asks |
+
+Example (a patterned floor to terrazzo): "change the whole floor in view to one seamless poured
+terrazzo surface with no tile or panel joints: the field areas and the inlay squares in polished
+dark charcoal terrazzo with small white and grey chips; the stone bands and the inlay outlines in a
+light grey terrazzo with the same chips. The bands and the rounded-square inlay keep their shapes,
+widths and positions."
 
 ## Planting
 Use Replace or Add. Name the plant type, height against an anchor, crown shape and density

@@ -54,7 +54,9 @@ Leave out lines that have nothing to say. One simple change may fit in one Chang
     EDT_02).
 15. **A material change keeps the shape.** Describe the object's parts from the inventory and say
     which part changes: "only the timber top cap of each handrail becomes brushed champagne metal;
-    the cap keeps its rounded profile and size; the slim metal support below stays as it is".
+    the cap keeps its rounded profile and size; the slim metal support below stays as it is". A
+    patterned surface gets a material map in the new material's real format
+    ([edit-types.md](edit-types.md) › Change a material).
 16. **Remove whole groups, not part of a group of look-alikes.** Removing two pots out of six
     standing together failed three times (left, swapped or turned into trees); removing both whole
     groups worked at once. If the user's count and the image disagree, ask which they mean.
@@ -81,6 +83,7 @@ Leave out lines that have nothing to say. One simple change may fit in one Chang
 | Object's profile or shape changed in a material swap | name the parts and say the shape and size stay (rule 15) |
 | Part of a look-alike group left, swapped or transformed instead of removed | remove the whole group, or ask the user (rule 16) |
 | Part of a named surface left unchanged (stone bands, inlay) | list every part of the surface in the Change line (rule 14) |
+| Pattern of a surface lost, inverted or kept in the old material | give each part its own new finish (material map, rule 15) |
 | Larger sign text garbled | quote the sign text exactly in Keep; this saved a name sign once. Tiny text still breaks: tell the user (see check.md) |
 
 When a new failure and a fix that worked turn up, add a row here.
