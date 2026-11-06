@@ -1,7 +1,7 @@
 # Maintaining the skill
 
 Read this before changing, pulling or pushing the skill. It syncs across machines through its own
-GitHub repository, in the same way as bc-archviz.
+GitHub repository (`github.com/bai-ting-chen/bc-image-roaster`).
 
 ## What may go in (RULES GOV_01, GOV_02)
 - **Methods that hold for any image:** prompt rules, failure → fix rows, edit-type templates,

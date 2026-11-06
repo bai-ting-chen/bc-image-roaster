@@ -14,8 +14,7 @@ description: >-
 
 Read [RULES.md](RULES.md), then the reference for the step you are in. Light, fast edits on top of
 an existing image; the core is the prompt, because the user writes rough English (not their first
-language). No compositing or masking: drift is fought with wording, checking and retries. For slow,
-exact photoreal renders use bc-archviz.
+language). No compositing or masking: drift is fought with wording, checking and retries.
 
 ## Prerequisites
 - Rook connected (`rhino_ping` returns pong); `rhino_render_view` reachable.
