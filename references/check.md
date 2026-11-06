@@ -28,6 +28,10 @@ changed is not a pass just because it drifted little.
 - **Pass:** all lines hold → deliver.
 - **Fail:** look up the failure in [prompting.md](prompting.md) › Failure → prompt fix.
 - **Escalating:** run the best prompt so far on Pro; tell the user which part kept failing.
+- **Exact tones:** a number like "15 % lighter" is not reached; the model lands near "lighter"
+  (asked 1.15, measured 1.7–2.0 on four tries). Say this before running, describe the tone in words
+  ("one shade lighter, almost the same colour"), and when the user needs the exact value, offer the
+  one chained step (RULES EDT_04) or a tone fix in an image editor.
 - **Small text:** it garbles in nearly every run (16 of 16 in testing). Do not retry for it; tell
   the user which text broke, they fix it outside this skill.
 
