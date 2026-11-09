@@ -17,6 +17,25 @@ Keep: <look-alikes and at-risk items, by name and position>. Keep the rest uncha
 
 Leave out lines that have nothing to say. One simple change may fit in one Change line and Keep.
 
+## Prompt ladder
+Every edit starts with three prompts written from the same edit spec. They differ only in how much
+the words control; the facts (targets, names, references, decisions) are the same in all three.
+Why: how much wording an edit needs is not known in advance. A short prompt leaves the model room
+to make the image look right; a long one holds more in place but can make it stiff or literal.
+Running all three shows which level this edit needs.
+
+| Rung | Form | Length |
+|---|---|---|
+| simple | plain sentences: the operation, the targets by exact name, "keep everything else as it is"; references named by role | 1–3 sentences |
+| structured | the template: one Change line per change, a short Keep line with the look-alikes, the camera and the geometry lines at risk | 3–6 lines |
+| detailed | the template in full: every part named with 2–3 visual traits, placement and size anchors, a Keep list of everything at risk including each geometry line ("the roof behind the canopy stays solid"), "Add nothing else", what not to copy from references | as long as the spec needs |
+
+- One spec, three wordings: no fact in one rung only, or the sheet compares facts, not wording.
+- The rules below apply to all three rungs, except rule 1 (Change and Keep apart), which starts at
+  the structured rung: the simple rung tests whether this edit needs that split.
+- For a single small change, where the rungs would come out nearly the same, the detailed rung
+  adds the anchors and the full Keep list, so the three still differ.
+
 ## Rules
 1. **Separate what changes from what stays.** Change lines, then a Keep line. In testing a plain
    sentence never passed cleanly; change/keep won every test.
@@ -83,6 +102,7 @@ Leave out lines that have nothing to say. One simple change may fit in one Chang
 | Part of a look-alike group left, swapped or transformed instead of removed | remove the whole group, or ask the user (rule 16) |
 | Part of a named surface left unchanged (stone bands, inlay) | list every part of the surface in the Change line (rule 14) |
 | Pattern of a surface lost, inverted or kept in the old material | give each part its own new finish (material map, rule 15) |
+| Content copied from a reference image (a view, cameras, signs) | name each item not to copy ("no sea view through the doors, no security cameras"); "do not copy objects" alone did not hold |
 | Larger sign text garbled | quote the sign text exactly in Keep; this saved a name sign once. Tiny text still breaks: tell the user (see result-check-and-retry.md) |
 
 When a new failure and a fix that worked turn up, add a row here.
