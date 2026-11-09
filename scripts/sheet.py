@@ -1,4 +1,4 @@
-"""Make a labelled comparison grid (input first), at most three columns."""
+"""Make a labelled comparison grid (input first), three columns unless --columns says otherwise."""
 
 import argparse
 import io
@@ -22,7 +22,7 @@ def parse_box(value):
     raise argparse.ArgumentTypeError("Use x0,y0,x1,y1 in 0..1, with x0<x1 and y0<y1.")
 
 
-def make_sheet(paths, destination, box, labels):
+def make_sheet(paths, destination, box, labels, columns=3):
     if labels is None:
         labels = [path.name for path in paths]
     if len(labels) != len(paths):
@@ -46,7 +46,7 @@ def make_sheet(paths, destination, box, labels):
     wrapped = [textwrap.wrap(label, width=max(1, width // 12)) or [""] for label in labels]
     label_height = max(map(len, wrapped)) * 26 + 16
     height = max(image.height for image in tiles) + label_height
-    columns = min(3, len(tiles))
+    columns = min(columns, len(tiles))
     rows = math.ceil(len(tiles) / columns)
     canvas = Image.new("RGB", (columns * width, rows * height), "#333333")
     draw = ImageDraw.Draw(canvas)
@@ -84,9 +84,12 @@ def main():
     parser.add_argument("out", type=Path)
     parser.add_argument("--box", type=parse_box, help="Fractional crop x0,y0,x1,y1.")
     parser.add_argument("--labels", nargs="+", help="Labels in image order (quote spaces).")
+    parser.add_argument("--columns", type=int, default=3, choices=range(1, 9), metavar="1-8",
+                        help="Images per row (default 3).")
     args = parser.parse_args()
     try:
-        print(json.dumps(make_sheet([args.input, *args.tries], args.out, args.box, args.labels)))
+        print(json.dumps(make_sheet([args.input, *args.tries], args.out, args.box, args.labels,
+                                    args.columns)))
     except (OSError, ValueError) as error:
         print(f"error: {error}", file=sys.stderr)
         return 1

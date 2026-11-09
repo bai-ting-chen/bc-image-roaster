@@ -6,12 +6,15 @@ pages before quoting them to the user.
 ## Which model
 | Model id | Use | 2K price | Time per call |
 |---|---|---:|---:|
-| `fal-ai/nano-banana-2` | **default** | $0.12 | 23–28 s |
-| `fal-ai/nano-banana-pro` | retries, when NB2 hits a limit (result-check-and-retry.md › Switching to Pro) | $0.15 | 30–56 s |
+| `fal-ai/nano-banana-2` | every ladder prompt; retries and fixes when the picked try is NB2 | $0.12 | 23–28 s |
+| `fal-ai/nano-banana-pro` | every ladder prompt; retries and fixes when the picked try is Pro | $0.15 | 30–56 s |
 
-In testing (3 images × 4 prompt forms) NB2 did at least as well as Pro on every image; Pro made the
-larger unrequested changes (reframing, extra objects). GPT Image 2 is not used: Rook's tool fails
-on fal async jobs for it.
+The ladder runs on both: 3 × $0.12 + 3 × $0.15 ≈ $0.81 per edit before retries. Why both: which
+model suits an edit is not known in advance. On small edits (3 images × 4 prompt forms) NB2 did at
+least as well as Pro and Pro made the larger unrequested changes (reframing, extra objects); on a
+whole-image render of a viewport capture Pro gave more realistic planting and people but drifted
+more in geometry (roof, shadows). GPT Image 2 is not used: Rook's tool fails on fal async jobs for
+it.
 
 ## The call
 Check Rook first (`rhino_ping`). Call `rhino_render_view` (if hidden, find it with
@@ -27,7 +30,8 @@ Check Rook first (`rhino_ping`). Call `rhino_render_view` (if hidden, find it wi
 | `reference_image_paths` | prepared reference images, at most 8 |
 | `port` | the Rhino instance from `rhino_ping`; needed when several Rhino windows are open (the call is refused without it) |
 
-Copy the result into the work folder as `try-NN.png`. Rook also keeps every result and its prompt
+Copy the result into the work folder as `try-NN-<rung>-<model>.png` (ladder) or
+`try-NN-<model>.png` (retries), model `nb2` or `pro`. Rook also keeps every result and its prompt
 in `%APPDATA%\Rook\artifacts\`.
 
 ## Limits

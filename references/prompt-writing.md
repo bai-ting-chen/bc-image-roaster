@@ -81,6 +81,13 @@ Running all three shows which level this edit needs.
 17. **Light and time of day: describe the sky and the lights you can see,** not just a word.
     "Evening" was read as dusk every time while the user meant night. Use the table in
     [prompt-templates-per-edit.md](prompt-templates-per-edit.md) › Sky, time of day.
+18. **Sun: give its direction in image terms and where the shadows fall,** whenever the image has
+    or gets sunlight: "sun from the upper left, behind the camera; the slat shadows fall as
+    diagonal stripes running from upper left to lower right across the floor; the left wall is in
+    shade, the right wall in sun." Same words in every rung and every retry. "Bright sun" alone
+    gave a different sun direction in each of six tries of the same edit. When the input already
+    has sun, the direction goes in the Keep line instead ("keep the sun direction and every
+    shadow as they are").
 
 ## Failure → prompt fix
 
@@ -96,6 +103,7 @@ Running all three shows which level this edit needs.
 | Framing or camera moved | add "Keep the camera, framing and crop exactly as they are." to Keep |
 | People clustered in one posed group | give each person a location ("one near the left steps, one in the middle …") |
 | Door opened, or a closed object changed state | name it in Keep with its state ("both bronze doors stay closed") |
+| Sun direction differs between tries, or shadows do not follow the geometry | state the sun direction and which way named shadows fall (rule 18); check it against the inventory's Light line |
 | Light fixtures changed form or new lamps added | describe the existing fixtures exactly; add "Add no other lights." |
 | Material spread to look-alikes (stone planters turned timber) | name them in Keep with their current material ("stay pale cream stone, not wood") |
 | Object's profile or shape changed in a material swap | name the parts and say the shape and size stay (rule 15) |

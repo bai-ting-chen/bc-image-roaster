@@ -20,6 +20,8 @@ changed is not a pass just because it drifted little.
      a reduced view passed a floor that had lost its pattern;
    - every Keep item and look-alike still there and unchanged;
    - nothing added, nothing moved, framing the same;
+   - sun direction and shadow direction as in the inventory's Light line: the same in every try
+     on the sheet, so tries are compared under one light;
    - every Geometry line of the inventory still true
      ([scene-inventory.md](scene-inventory.md)), checked in crops of the whole image, not only
      around the changed parts;
@@ -41,14 +43,17 @@ come out wrong in the next; in testing, three of five retries broke parts an ear
   the user.
 
 ## Recommend one from the ladder
-After the three ladder tries are checked:
-1. **One sheet** of the input and the three tries, labelled with rung, model and verdict:
-   `try-01 simple nb2 pass`, `try-02 structured nb2 fail: look-alike changed`.
+After the six ladder tries are checked:
+1. **One sheet** of the input and the six tries in a grid: one row per model, one column per rung,
+   the input at the start of each row (`sheet.py --columns 4`, input given twice: input, the three
+   NB2 tries, input, the three Pro tries). Labels with rung, model and verdict:
+   `try-01 simple nb2 pass`, `try-04 structured pro fail: look-alike changed`.
 2. **Recommend one** to the user, by this order: the most Change lines done, then the fewest Keep
    failures, then the best look as a whole (light, material realism, no AI artefacts). Give the
    reasons in two or three plain lines and say what the recommended try still gets wrong.
 3. **One line per other try:** what it did better or worse than the recommended one. When a
    simpler rung did as well as a longer one, say so: it shows this kind of edit needs less wording.
+   When one model won across the rungs, say so too.
 4. **Stop for the user's pick.** The user may pick another try, ask for a retry from one of them, or
    take one as it is. Write the recommendation and the pick to `log.md`.
 
@@ -58,14 +63,14 @@ After the three ladder tries are checked:
 - **Fail on the whole image** (wrong light, wrong style, many parts): retry from the picked try's
   prompt on the original; look up the failure in [prompt-writing.md](prompt-writing.md) ›
   Failure → prompt fix. Retries run one prompt at a time.
-- **Switching to Pro:** any retry may run on Pro, without asking, when the same part failed twice
-  on NB2 after prompt fixes, or the failure is detail or realism the wording already asks for
-  (sparse foliage, flat materials). Name the model in the sheet label and the log, and tell the
-  user which part kept failing.
+- **Model for retries:** the picked try's model. Switch to the other model, without asking, when
+  the same part failed twice after prompt fixes, or the failure is detail or realism the wording
+  already asks for (sparse foliage, flat materials: try Pro) or geometry drift (try NB2). Name the
+  model in the sheet label and the log, and tell the user which part kept failing.
 - **Exact tones:** a number like "15 % lighter" is not reached; the model lands near "lighter"
   (asked 1.15, measured 1.7–2.0 on four tries). Say this before running, describe the tone in words
-  ("one shade lighter, almost the same colour"), and when the user needs the exact value, offer the
-  a fix on the accepted image or a tone fix in an image editor.
+  ("one shade lighter, almost the same colour"), and when the user needs the exact value, offer a
+  fix on the accepted image or a tone fix in an image editor.
 - **Small text:** it garbles in nearly every run (16 of 16 in testing). Do not retry for it; tell
   the user which text broke, they fix it outside this skill.
 
@@ -90,5 +95,5 @@ whole-image redraw chained on an earlier result drifts further from the original
 
 ## Deliver
 Rebuild the sheet with `sheet.py` when retries were added (input, the ladder, every retry), labels
-like `try-04 nb2 pass (from structured)`. Delete `input.jpg`, the
+like `try-07 nb2 pass (from structured nb2)`. Delete `input.jpg`, the
 prepared references and any crop sheets; keep the tries, `sheet.jpg` and `log.md`.

@@ -12,7 +12,7 @@ Write the inventory into the edit's `log.md`. Short lines, no prose.
 |---|---|
 | Image type | render, viewport capture, photo, illustration, diagram |
 | Camera | eye level or high, wide or tight, horizon position |
-| Light | sun direction, time of day, hard or soft shadows, artificial light |
+| Light | sun direction in image terms (from the upper left, behind the camera, straight down through the opening), time of day, hard or soft shadows, artificial light. An input without sun (a viewport capture with shading off, an overcast photo) has no direction to keep: when the edit adds sun, the direction is a decision. Take it from the user, or from a shading-on capture of the same view (pass it as a reference image for light only); otherwise ask, offering the direction that suits the space |
 | Style | photoreal, stylised, colour grading |
 | Edit targets | each one by precise name (see [prompt-templates-per-edit.md](prompt-templates-per-edit.md) for vocabulary), how many, where (left of the stairs, in the grey stone pot), how big against a visible anchor |
 | Look-alikes | anything the edit could hit by mistake: the same kind of object elsewhere, half-hidden copies, objects cut by the image edge |
