@@ -1,4 +1,4 @@
-# Models and the Rook call
+# Model and Rook call: which model, input preparation, the call, limits
 
 Checked 2026-11-06. Prices change; recheck the fal
 pages before quoting them to the user.
@@ -7,7 +7,7 @@ pages before quoting them to the user.
 | Model id | Use | 2K price | Time per call |
 |---|---|---:|---:|
 | `fal-ai/nano-banana-2` | **default** | $0.12 | 23–28 s |
-| `fal-ai/nano-banana-pro` | escalation, once, after the retry cap (RULES CHK_02) | $0.15 | 30–56 s |
+| `fal-ai/nano-banana-pro` | escalation, once, after the retry cap | $0.15 | 30–56 s |
 
 In testing (3 images × 4 prompt forms) NB2 did at least as well as Pro on every image; Pro made the
 larger unrequested changes (reframing, extra objects). GPT Image 2 is not used: Rook's tool fails

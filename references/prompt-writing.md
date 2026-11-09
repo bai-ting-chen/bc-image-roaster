@@ -1,4 +1,4 @@
-# Prompting: from request to prompt
+# Prompt writing: from request to prompt
 
 The prompt is the whole control we have: the model redraws the entire image every time, guided by
 the picture and the words. These rules are a generic base for image-edit models, ranked by how
@@ -42,7 +42,7 @@ Leave out lines that have nothing to say. One simple change may fit in one Chang
 10. **Reference images get a role in words:** "The second image is a reference photo of the
     sculpture." Do not rely on "image 2" numbering alone.
 11. **Quote text to render, spelled exactly.** Small existing text will still break (see
-    [check.md](check.md)); warn the user before running.
+    [result-check-and-retry.md](result-check-and-retry.md)); warn the user before running.
 12. **Plain sentences in short blocks.** No keyword lists, no weight syntax like `(tree:1.5)`, no
     JSON.
 13. **On a retry, restate the important keeps.** Each call is fresh; it does not remember the
@@ -50,19 +50,18 @@ Leave out lines that have nothing to say. One simple change may fit in one Chang
     the rail profile), so the check of every retry covers all Change and Keep lines again.
 14. **Take the user's words at their full scope.** "The floor" is every floor surface in view:
     field tiles, stone bands, inlays, borders. List each part in the Change line. Do not leave a
-    part out because it looks like a design feature; if a part may be meant to stay, ask (RULES
-    EDT_02).
+    part out because it looks like a design feature; if a part may be meant to stay, ask.
 15. **A material change keeps the shape.** Describe the object's parts from the inventory and say
     which part changes: "only the timber top cap of each handrail becomes brushed champagne metal;
     the cap keeps its rounded profile and size; the slim metal support below stays as it is". A
     patterned surface gets a material map in the new material's real format
-    ([edit-types.md](edit-types.md) › Change a material).
+    ([prompt-templates-per-edit.md](prompt-templates-per-edit.md) › Change a material).
 16. **Remove whole groups, not part of a group of look-alikes.** Removing two pots out of six
     standing together failed three times (left, swapped or turned into trees); removing both whole
     groups worked at once. If the user's count and the image disagree, ask which they mean.
 17. **Light and time of day: describe the sky and the lights you can see,** not just a word.
     "Evening" was read as dusk every time while the user meant night. Use the table in
-    [edit-types.md](edit-types.md) › Sky, time of day.
+    [prompt-templates-per-edit.md](prompt-templates-per-edit.md) › Sky, time of day.
 
 ## Failure → prompt fix
 
@@ -84,11 +83,11 @@ Leave out lines that have nothing to say. One simple change may fit in one Chang
 | Part of a look-alike group left, swapped or transformed instead of removed | remove the whole group, or ask the user (rule 16) |
 | Part of a named surface left unchanged (stone bands, inlay) | list every part of the surface in the Change line (rule 14) |
 | Pattern of a surface lost, inverted or kept in the old material | give each part its own new finish (material map, rule 15) |
-| Larger sign text garbled | quote the sign text exactly in Keep; this saved a name sign once. Tiny text still breaks: tell the user (see check.md) |
+| Larger sign text garbled | quote the sign text exactly in Keep; this saved a name sign once. Tiny text still breaks: tell the user (see result-check-and-retry.md) |
 
 When a new failure and a fix that worked turn up, add a row here.
 
-## Showing the prompt to the user (RULES EDT_03)
+## Showing the prompt to the user
 Show the prompt as it will be sent, then one line in plain English on why it is phrased that way
 ("I named both bonsai and their pots so the model does not leave one; the desk line says the space
 stays empty so the sculpture does not move there."). Keep the explanation short and concrete; the

@@ -1,7 +1,7 @@
-# Edit types: templates and vocabulary
+# Prompt templates per edit: wording and vocabulary for each kind of edit
 
 One short template per common edit. Fill the brackets from the scene inventory; the general rules
-are in [prompting.md](prompting.md). Examples are for illustration, not to copy.
+are in [prompt-writing.md](prompt-writing.md). Examples are for illustration, not to copy.
 
 ## Replace an object
 ```text
@@ -20,7 +20,7 @@ Change: remove [the exact object and what sits on it, location]. The space stays
 Keep: [what stands behind and beside it]. Keep the rest unchanged.
 ```
 Remove whole groups: when the target stands among look-alikes, remove the group or ask
-([prompting.md](prompting.md) rule 16).
+([prompt-writing.md](prompt-writing.md) rule 16).
 Example: "remove the dark carved stone reception desk in the centre, with its wooden top and the
 brass table lamp on it. The space stays empty."
 
@@ -46,7 +46,7 @@ tiles, stone bands, inlay). Name every part that changes and every part that sta
 **A surface with a pattern of parts gets a material map,** one new finish per part, so the pattern
 still has something to show. Never write "everything becomes X, keep the pattern": in testing that
 contradiction made the model keep old bands or redraw the pattern. If the user names one material
-for a patterned surface, ask whether the pattern parts take a lighter or darker tone (RULES EDT_02).
+for a patterned surface, ask whether the pattern parts take a lighter or darker tone.
 
 **Use the new material's real format,** not the old one's joints:
 
@@ -81,7 +81,7 @@ Describe what the sky and the lights look like, not just the word:
 | evening, night | dark navy night sky, no sunlight, no shadows from the sun, existing lights on |
 | overcast | even grey sky, soft light, no hard shadows |
 
-"Evening" has two readings, dusk or night (RULES EDT_02). Name the existing light
+"Evening" has two readings, dusk or night. Name the existing light
 fixtures that should glow and add "Add no other lights." This edit changes every region on
 purpose: the drift flag will light up everywhere, so check the objects, not the numbers. Season
 cues to name: bare branches, snow on flat surfaces only, autumn leaf colour.

@@ -1,4 +1,4 @@
-# Check: did the change happen, did anything else change
+# Result check and retry: did the change happen, did anything else change
 
 Two separate questions, judged separately (as in VIEScore and GEditBench): an image that barely
 changed is not a pass just because it drifted little.
@@ -21,26 +21,26 @@ changed is not a pass just because it drifted little.
    - every Keep item and look-alike still there and unchanged;
    - nothing added, nothing moved, framing the same;
    - text: readable and spelled as before, or flagged to the user.
-5. Write the verdict and the failure name (from the table in [prompting.md](prompting.md)) to
+5. Write the verdict and the failure name (from the table in [prompt-writing.md](prompt-writing.md)) to
    `log.md`.
 
-## Pass, retry, escalate (RULES CHK_02, MOD_01)
+## Pass, retry, escalate
 - **Pass:** all lines hold → deliver.
-- **Fail:** look up the failure in [prompting.md](prompting.md) › Failure → prompt fix.
+- **Fail:** look up the failure in [prompt-writing.md](prompt-writing.md) › Failure → prompt fix.
 - **Escalating:** run the best prompt so far on Pro; tell the user which part kept failing.
 - **Exact tones:** a number like "15 % lighter" is not reached; the model lands near "lighter"
   (asked 1.15, measured 1.7–2.0 on four tries). Say this before running, describe the tone in words
   ("one shade lighter, almost the same colour"), and when the user needs the exact value, offer the
-  one chained step (RULES EDT_04) or a tone fix in an image editor.
+  one chained step or a tone fix in an image editor.
 - **Small text:** it garbles in nearly every run (16 of 16 in testing). Do not retry for it; tell
   the user which text broke, they fix it outside this skill.
 
-## Follow-up edits (RULES EDT_04)
+## Follow-up edits
 Why: each pass redraws and shrinks the whole image, so an edit chained on an earlier result
 drifts further from the original with every step. How: add the new change to the edit spec as one
 more Change line. A chained step, when the rule allows one, uses the accepted try as
 `input_image_path` while `compare.py` and the sheet still take the original as the input.
 
-## Deliver (RULES CHK_03)
+## Deliver
 Build the sheet with `sheet.py`, labels like `try-01 nb2 fail: merged`. Delete `input.jpg`, the
 prepared references and any crop sheets; keep the tries, `sheet.jpg` and `log.md`.

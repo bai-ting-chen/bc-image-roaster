@@ -1,4 +1,4 @@
-# Image reading: the scene inventory
+# Scene inventory: reading the image before prompting
 
 Read the input before writing any prompt. The user names things loosely ("coconut trees" for
 royal palms, "the bonsai" when there are two); the model needs exact names, and the check needs a
@@ -14,7 +14,7 @@ Write the inventory into the edit's `log.md`. Short lines, no prose.
 | Camera | eye level or high, wide or tight, horizon position |
 | Light | sun direction, time of day, hard or soft shadows, artificial light |
 | Style | photoreal, stylised, colour grading |
-| Edit targets | each one by precise name (see [edit-types.md](edit-types.md) for vocabulary), how many, where (left of the stairs, in the grey stone pot), how big against a visible anchor |
+| Edit targets | each one by precise name (see [prompt-templates-per-edit.md](prompt-templates-per-edit.md) for vocabulary), how many, where (left of the stairs, in the grey stone pot), how big against a visible anchor |
 | Look-alikes | anything the edit could hit by mistake: the same kind of object elsewhere, half-hidden copies, objects cut by the image edge |
 | At risk | small text and signs, faces, reflections, objects touching the target, thin lines (railings, cables) |
 | Empty space | what lies behind a target that will be removed |
@@ -33,5 +33,5 @@ joint, a roof edge, a lounger, the gap of sky above a crown.
   sign beside the bonsai (small text).
 - Empty space: lattice screen down to the floor and cream floor tiles behind the desk.
 
-The same inventory is the checklist in [check.md](check.md): every target changed, every
+The same inventory is the checklist in [result-check-and-retry.md](result-check-and-retry.md): every target changed, every
 look-alike and at-risk item still there.
